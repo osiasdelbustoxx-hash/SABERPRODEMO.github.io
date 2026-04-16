@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mini Juego Saber Pro</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+<nav>
+
+<div class="logo">
+    <img src="imagenes/saberpro.jpg">
+    <h2>Saber Pro</h2>
+</div>
+
+<ul class="nav_links">
+<li><a href="index.html">INICIO</a></li>
+<li><a href="videosaprender.html">VIDEOS</a></li>
+<li><a href="proyecto.html">JUEGO</a></li>
+</ul>
+
+</nav>
+</header>
+
+<!-- HERO DEL JUEGO -->
+<section class="hero juego">
+    <div class="hero_texto">
+        <h1>🎮 Mini Juego Saber Pro</h1>
+        <p>Responde correctamente y mejora tus habilidades</p>
+    </div>
+</section>
+
+<!-- CONTENEDOR DEL JUEGO -->
+<div class="contenedor juego_box">
+
+<h2 id="pregunta"></h2>
+
+<div id="opciones"></div>
+
+<p id="resultado"></p>
+
+<h3>Puntaje: <span id="puntaje">0</span></h3>
+
+<button class="boton" onclick="siguientePregunta()">Siguiente pregunta</button>
+
+<br><br>
+
+<a href="index.html" class="boton">⬅ Volver al inicio</a>
+
+</div>
+
+<footer>
+<p>Proyecto educativo Saber Pro - Aprende jugando</p>
+</footer>
+
+<script>
+
+let preguntas = [
+
+{
+pregunta: "Si todos los ingenieros son analíticos y Juan es ingeniero, entonces:",
+opciones: [
+"Juan no es analítico",
+"Juan es analítico",
+"Juan es médico",
+"No se puede saber"
+],
+respuesta: 1
+},
+
+{
+pregunta: "¿Cuál número continúa la serie? 2, 4, 8, 16, ?",
+opciones: [
+"18",
+"24",
+"32",
+"20"
+],
+respuesta: 2
+},
+
+{
+pregunta: "En un texto argumentativo, la tesis es:",
+opciones: [
+"La idea principal que se defiende",
+"Un ejemplo",
+"El título",
+"Una cita"
+],
+respuesta: 0
+},
+
+{
+pregunta: "¿Cuál es el sinónimo de 'rápido'?",
+opciones: [
+"Lento",
+"Veloz",
+"Pesado",
+"Grande"
+],
+respuesta: 1
+},
+
+{
+pregunta: "¿Qué operación es inversa a la suma?",
+opciones: [
+"Multiplicación",
+"División",
+"Resta",
+"Potencia"
+],
+respuesta: 2
+},
+
+{
+pregunta: "¿Cuál es el resultado de 5 x 6?",
+opciones: [
+"25",
+"30",
+"35",
+"20"
+],
+respuesta: 1
+},
+
+{
+pregunta: "¿Qué tipo de texto busca informar hechos reales?",
+opciones: [
+"Narrativo",
+"Argumentativo",
+"Expositivo",
+"Poético"
+],
+respuesta: 2
+},
+
+{
+pregunta: "¿Cuál es el sujeto en la oración: 'El perro corre rápido'?",
+opciones: [
+"Corre",
+"Rápido",
+"El perro",
+"Ninguno"
+],
+respuesta: 2
+},
+
+{
+pregunta: "Si un triángulo tiene todos sus lados iguales, es:",
+opciones: [
+"Isósceles",
+"Escaleno",
+"Equilátero",
+"Rectángulo"
+],
+respuesta: 2
+},
+
+{
+pregunta: "¿Qué palabra está correctamente escrita?",
+opciones: [
+"Haver",
+"Aver",
+"Haber",
+"A ver"
+],
+respuesta: 2
+}
+
+]
+
+let preguntaActual = 0
+let puntaje = 0
+
+function cargarPregunta(){
+
+let p = preguntas[preguntaActual]
+
+document.getElementById("pregunta").innerText = p.pregunta
+
+let opcionesHTML = ""
+
+p.opciones.forEach((opcion,index)=>{
+opcionesHTML += `<button class="opcion" onclick="verificarRespuesta(${index})">${opcion}</button>`
+})
+
+document.getElementById("opciones").innerHTML = opcionesHTML
+document.getElementById("resultado").innerText = ""
+
+}
+
+function verificarRespuesta(indice){
+
+let correcta = preguntas[preguntaActual].respuesta
+
+if(indice === correcta){
+document.getElementById("resultado").innerText = "✅ Correcto!"
+puntaje++
+}else{
+document.getElementById("resultado").innerText = "❌ Incorrecto"
+}
+
+document.getElementById("puntaje").innerText = puntaje
+
+}
+
+function siguientePregunta(){
+
+preguntaActual++
+
+if(preguntaActual >= preguntas.length){
+alert("Juego terminado. Puntaje: " + puntaje)
+preguntaActual = 0
+puntaje = 0
+}
+
+cargarPregunta()
+
+}
+
+cargarPregunta()
+
+</script>
+
+</body>
+</html>

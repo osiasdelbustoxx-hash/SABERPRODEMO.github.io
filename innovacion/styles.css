@@ -1,0 +1,376 @@
+/* RESET */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+/* BODY */
+
+body{
+
+    font-family: "Archivo Narrow", sans-serif;
+
+
+
+    background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)),
+
+    url("imagenes/cuc.jpg");
+
+
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+
+
+    color:#e2e8f0;
+
+}
+
+
+
+/* HEADER */
+
+header{
+
+    position: fixed;
+
+    top:0;
+
+    width:100%;
+
+    background: rgba(15,23,42,0.7);
+
+    backdrop-filter: blur(12px);
+
+    z-index:1000;
+
+}
+
+
+
+/* NAV */
+
+nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:15px;
+
+}
+
+
+
+/* LOGO */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+.logo img{
+
+    height:55px;
+
+    width:55px;
+
+    border-radius:50%;
+
+}
+
+
+
+/* NAV LINKS */
+
+.nav_links{
+
+    list-style:none;
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+
+
+.nav_links a{
+
+    text-decoration:none;
+
+    color:#e2e8f0;
+
+    font-weight:600;
+
+}
+
+
+
+.nav_links li:hover{
+
+    transform: scale(1.1);
+
+}
+
+
+
+.nav_links a:hover{
+
+    color:#fbbf24;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+    height:100vh;
+
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+
+    url("imagenes/vision.png");
+
+
+
+    background-size: cover;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+
+.hero h1{
+
+    font-size:50px;
+
+}
+
+
+
+/* BOTON */
+
+.boton{
+
+    display:inline-block;
+
+    padding:12px 25px;
+
+    background:#fbbf24;
+
+    color:#0f172a;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    margin-top:20px;
+
+}
+
+
+
+/* CONTENIDO */
+
+.contenedor{
+
+    width:85%;
+
+    margin:auto;
+
+    margin-top:-80px;
+
+
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+
+
+    padding:40px;
+
+    border-radius:15px;
+
+}
+
+
+
+/* TIP */
+
+.tip{
+
+    background: rgba(56,189,248,0.2);
+
+    padding:15px;
+
+    border-left:5px solid #38bdf8;
+
+    margin-top:20px;
+
+}
+
+
+
+/* FORMULARIO 🔥 */
+
+.FOR{
+
+    margin:50px auto;
+
+    width:90%;
+
+    max-width:600px;
+
+
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+
+
+    padding:30px;
+
+    border-radius:15px;
+
+}
+
+
+
+.FOR h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+input, textarea{
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+}
+
+
+
+textarea{
+
+    height:120px;
+
+}
+
+
+
+input[type="submit"]{
+
+    background:#fbbf24;
+
+    color:#0f172a;}
+
+/* 🎮 HERO ESPECÍFICO DEL JUEGO */
+.juego{
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url("imagenes/juego.jpg"); /* 🔥 cambia esta imagen */
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* CAJA DEL JUEGO */
+.juego_box{
+    text-align:center;
+}
+
+/* BOTONES DE OPCIONES */
+.opcion{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:12px;
+
+    background: rgba(255,255,255,0.1);
+    color:white;
+
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+/* HOVER OPCIONES */
+.opcion:hover{
+    background:#fbbf24;
+    color:#0f172a;
+    transform: scale(1.03);
+}
+
+/* RESULTADO */
+#resultado{
+    margin-top:15px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* PUNTAJE */
+h3{
+    margin-top:15px;
+}
+
+.tarjeta iframe{
+    border-radius:10px;
+    margin:10px 0;
+}
